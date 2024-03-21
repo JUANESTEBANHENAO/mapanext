@@ -1,0 +1,91 @@
+/*
+<main className="stops-page">
+<h2 className="title">Paraderos de la ciudad</h2>
+<section className="stop-list">
+    {stops.map(({ ID_Paradero, Nombre, Foto }) => (
+        <section key={ID_Paradero} className="stop">
+            <img src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/pass/GoogleMapTA.jpg" alt="" className="stop-location" />
+            <section className="content">
+                <h3>{Nombre}</h3>
+                <img src={Foto} alt="" className="stop-image" />
+                <NavButton to={`/home/stop/${ID_Paradero}`} content="Ver paradero" />
+            </section>
+        </section>
+    ))}
+</section>
+</main>
+*/
+@import "../../../lib/style-helpers/measurement";
+@import "../../../lib/style-helpers/colors";
+
+.stops-page {
+    padding: 20px;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .title {
+    font-size: 48px;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .stop-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .stop {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stop-location {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .content h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .stop-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  }
+  

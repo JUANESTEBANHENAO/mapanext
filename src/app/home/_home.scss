@@ -1,0 +1,472 @@
+@import "../../lib/style-helpers/mixins";
+@import "../../lib/style-helpers/colors";
+@import "../../lib/style-helpers/measurement";
+
+.main-home {
+  position: relative;
+  height: 90vh; /* Altura del 90% del viewport */
+  max-height: 1000px; /* Altura máxima */
+  padding: 40px; /* Espaciado interno */
+  background-color: $base-color; /* Color de fondo */
+
+  /* Estilos para el contenedor principal */
+  .background {
+    border-radius: $radius-base; /* Bordes redondeados */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ancho del 100% */
+    height: 100%; /* Altura del 100% */
+    background-color: darken($primary, 10%); /* Color de fondo oscurecido */
+  }
+
+  /* Estilos para la imagen del teléfono */
+  .phone-image {
+    width: 40%; /* Ancho del 40% */
+    height: 90%; /* Altura del 90% */
+    border-radius: $radius-base; /* Bordes redondeados */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      width: 100%; /* Ancho del 100% */
+      animation: float 6s ease-in-out infinite; /* Animación de flotación */
+      z-index: 10;
+      transform: translateY(-20px); /* Desplazamiento vertical */
+    }
+
+    .background-map {
+      position: absolute;
+      bottom: 5%;
+      animation: none;
+      right: 15%;
+      width: 40%;
+      z-index: 9;
+    }
+  }
+
+  /* Estilos para la información */
+  .information {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px; /* Espacio entre elementos */
+    padding: 20px; /* Espaciado interno */
+    width: 50%; /* Ancho del 50% */
+
+    /* Estilos para el mensaje de bienvenida */
+    .welcome-message {
+      color: $base-color; /* Color del texto */
+      font-size: 3.5rem; /* Tamaño de fuente */
+      font-weight: 900; /* Grosor de fuente */
+    }
+
+    /* Estilos para el párrafo de bienvenida */
+    .welcome-pharagraph {
+      color: $base-color; /* Color del texto */
+      font-size: 1.2rem; /* Tamaño de fuente */
+      max-width: 50ch; /* Ancho máximo */
+      font-weight: 300; /* Grosor de fuente */
+    }
+
+    /* Estilos para los logos */
+    .logos {
+      display: flex;
+      gap: 20px; /* Espacio entre elementos */
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 30px; /* Ancho de imagen */
+        filter: invert(1); /* Invertir colores */
+      }
+    }
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+
+}
+
+.to-job {
+  display: flex;
+  gap: 5px;
+  color: white;
+  font-size: 15px;
+  align-items: center;
+
+  .job-link {
+    font-weight: 900;
+    font-size: 17px;
+  }
+
+}
+
+.home-content {
+  padding: 20px*2.5 15px*2.5;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $primary;
+  gap: 20px;
+  background-color: $base-color;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0.9;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  border-radius: $radius-base;
+
+  .principal-message {
+    max-width: 40ch;
+    text-overflow: ellipsis;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: .01px;
+  }
+}
+
+
+.main-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+
+  .main-button {
+    strong {
+      color: $base-color;
+    }
+
+    width: 50%;
+    height: 70px;
+    background-color: $secondary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: $base-color;
+  position: relative;
+  padding: 25px 0;
+
+
+  .info-part {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 3rem 1.25rem;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    background-color: $base-color;
+    filter: brightness(0.85);
+    width: 80%;
+    height: 1px;
+  }
+  .services_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 20px; /* Espacio entre elementos */
+  
+    .services-title {
+      font-size: 2rem; /* Tamaño del título */
+      font-weight: bold; /* Negrita */
+      text-transform: uppercase; /* Convertir a mayúsculas */
+      color: #ffffff; /* Color del texto */
+      background-color: #600505;
+      padding: 5px 10px; /* Ajusta el espaciado entre el texto y el borde */
+      border-radius: 15px;
+      width: 40%;
+    }
+    
+    strong {
+      font-size: 1.2rem; /* Tamaño del texto en negrita */
+      font-weight: bold; /* Negrita */
+      color: black; /* Color del texto */
+    }
+  
+    p {
+      font-size: 1rem; /* Tamaño del párrafo */
+      color: #000000; /* Color del texto */
+      max-width: 80%; /* Ancho máximo del párrafo */
+    }
+  }
+  
+
+
+}
+
+.home-logo {
+  flex: 1;
+  flex-basis: 0;
+}
+
+
+.companies-part {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  background-color: $base-color;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    background-color: darken($base-color, 10%);
+    filter: brightness(0.85);
+    width: 50%;
+    height: 1px;
+  }
+
+  .companies-text {
+    font-size: 2em;
+    width: 50%;
+    text-align: center;
+    text-wrap: balance;
+    padding: 20px;
+  }
+
+  .company-list {
+    background-color: darken($base-color, 15%);
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    align-items: center;
+    padding: 80px 40px;
+
+  }
+
+}
+.final-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 100px 100px;
+  background-color: #fffafa;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.content h3 {
+  font-size: 2.5rem; /* Tamaño del título */
+  font-weight: bold; /* Negrita */
+  color: #333; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+  background-color: #000; /* Fondo negro para el título */
+  color: #fff; /* Color blanco para el texto */
+  padding: 10px; /* Añadir espacio alrededor del texto */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.content p {
+  font-size: 1.2rem; /* Tamaño del texto */
+  color: #555; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+  max-width: 80%; /* Ancho máximo del texto */
+  margin: 0 auto; /* Centrar el texto horizontalmente */
+}
+
+
+.image {
+  width: 50%;
+  margin-left: 50px;
+}
+
+.image img {
+  width: 70%;
+  height: auto;
+  border-radius: 10px; /* Bordes redondeados para la imagen */
+}
+
+.Pagos {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Divide el área en dos columnas */
+  gap: 20px; /* Espacio entre las dos áreas */
+  padding: 20px; /* Añade espacio alrededor del grid */
+  background-color: #ffffff;
+}
+
+.metodos-pago {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+}
+
+.titulo {
+  font-size: 2rem; /* Tamaño del título */
+  font-weight: bold; /* Negrita */
+  color: #333; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+  background-color: #000; /* Fondo negro para el título */
+  color: #fff; /* Color blanco para el texto */
+  padding: 15px; /* Añadir espacio alrededor del texto */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.imagenes-pequenas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Mostrar tres columnas por fila */
+  gap: 10px; /* Espacio entre las imágenes */
+  justify-content: center; /* Centra las imágenes horizontalmente */
+}
+
+
+.imagenes-pequenas img {
+  max-width: 100%;
+  height: auto;
+}
+
+.texto-grande {
+  display: flex;
+  margin-top: 20%;
+  font-size: 1.5rem; 
+  font-weight: bold; 
+  text-align: center; 
+  
+}
+.titulo{
+  font-size: 2.5rem;
+}
+
+.imagen-grande img{
+  width: 70%;
+}
+
+.bus {
+  width: 60%        
+}
+
+@keyframes movimiento {
+  0% {
+    transform: translateY(0); 
+  }
+  50% {
+    transform: translateY(-5px); 
+  }
+  100% {
+    transform: translateY(0); 
+  }
+}
+
+.imagenes-pequenas img {
+  max-width: 100%;
+  height: auto;
+  animation: movimiento 3s ease-in-out infinite; 
+}
+
+
+/* Estilos para pantallas pequeñas (mínimo 400px) */
+@media (min-width: 400px) {
+  
+  .final-info {
+    padding: 50px 20px;
+    gap: 20px;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .content h3 {
+    font-size: 2rem;
+  }
+
+  .content p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .image {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .image img {
+    width: 100%;
+  }
+}
+
+/* Estilos para pantallas medianas (mínimo 768px) */
+@media (min-width: 768px) {
+  .final-info {
+    padding: 100px 50px;
+  }
+
+  .content h3 {
+    font-size: 2.5rem;
+  }
+
+  .content p {
+    font-size: 1.2rem;
+  }
+
+  .image {
+    width: 50%;
+    margin-left: 50px;
+  }
+
+  .image img {
+    width: 70%;
+  }
+}
+
+/* Estilos para pantallas grandes (mínimo 1024px) */
+@media (min-width: 1024px) {
+  .final-info {
+    padding: 100px;
+  }
+
+  .content h3 {
+    font-size: 3rem;
+  }
+
+  .content p {
+    font-size: 1.5rem;
+  }
+}

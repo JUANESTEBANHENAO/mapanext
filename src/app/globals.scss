@@ -1,0 +1,30 @@
+@import "../lib/styles/button";
+@import "../lib/styles/input";
+@import "../lib/styles/carousel";
+@import "../lib/styles/route-card";
+@import "../lib/styles/logo";
+@import "../lib/style-helpers/colors";
+@import "../lib/styles/company-card";
+@import "../lib/styles/route-item";
+@import "../lib/styles/second-route-card";
+@import "../lib/styles/stop-card";
+
+
+*,
+*>* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #000;
+  scrollbar-width: thin;
+}
+
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+span {
+  color: $base-color;
+}

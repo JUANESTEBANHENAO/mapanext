@@ -1,0 +1,153 @@
+@import "../../../../lib/style-helpers/colors";
+@import "../../../../lib/style-helpers/measurement";
+@import "../../../../lib/style-helpers/mixins";
+
+
+.register-content {
+  padding: 5rem 1.5rem;
+  width: 70%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: $radius-base;
+}
+
+.register-form {
+  display: flex;
+  gap: 1rem;
+  width: 500px;
+  flex: 1;
+  padding: 1rem 0;
+  overflow-x: hidden;
+}
+
+.register-camps {
+  transition: display 0.3s ease-in-out;
+  display: none;
+  min-width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: end;
+  gap: 1rem;
+
+  .continue-button {
+    margin: 0 20px 0 0;
+    bottom: 0;
+    right: 0;
+
+  }
+
+  .input-wrapper {
+    width: 100%;
+    justify-content: end;
+    text-align: end;
+    flex-direction: column;
+    align-items: start;
+
+    .form-input {
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid white;
+      border-radius: 0;
+    }
+  }
+
+}
+
+.register-camps.active {
+  display: flex;
+}
+
+.movement-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .back-button {
+    margin: 0 20px 0 0;
+  }
+
+  .continue-button {
+    margin: 0 0 0 20px;
+  }
+}
+
+.image-profile-wrapper {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  gap: 1rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: $primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+  }
+
+  .profile-image-input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+}
+
+@include responsive("tablet") {
+  .register-content {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .register-form {
+    width: 100%;
+  }
+
+  .register-camps {
+    width: 100%;
+  }
+
+  .image-profile-wrapper {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+
+@include responsive("phone") {
+  .register-content {
+    width: 90%;
+  }
+
+  .register-form {
+    width: 100%;
+  }
+
+  .register-camps {
+    width: 100%;
+  }
+
+  .image-profile-wrapper {
+    width: 150px;
+    height: 150px;
+  }
+}

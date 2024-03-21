@@ -1,0 +1,181 @@
+@import "../../../lib/style-helpers/measurement";
+@import "../../../lib/style-helpers/colors";
+@import "../../../lib/style-helpers/mixins";
+
+/* Estilos generales */
+.join-home {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+
+    background-image: url("https://images.pexels.com/photos/1391293/pexels-photo-1391293.jpeg?auto=compress&cs=tinysrgb&w=600");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include responsive("phone") {
+        height: fit-content;
+
+    }
+
+    * {
+        color: $base-color;
+        /* Asegúrate de definir $base-color */
+    }
+
+
+
+    .form-sections {
+        border-radius: $radius-base;
+        /* Asegúrate de definir $radius-base */
+        backdrop-filter: brightness(0.15) blur(3px);
+        display: flex;
+
+
+
+        width: 80%;
+
+        .change-join-type {
+            background-color: $primary;
+            /* Asegúrate de definir $primary */
+            padding: 5rem 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            border-radius: inherit;
+
+            .change-join-button {
+                background-color: $dark-color;
+                /* Asegúrate de definir $dark-color */
+            }
+
+            h2 {
+                font-size: 2.2rem;
+                text-align: center;
+            }
+
+            p {
+                font-size: 1.2rem;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@include responsive("tablet") {
+    .join-home {
+        height: fit-content;
+
+        .form-sections {
+            border-radius: none;
+            border-radius: none;
+            flex-direction: column-reverse;
+            padding: 0;
+            width: 100%;
+
+            .change-join-type {
+                border-radius: 0;
+                padding: 20px;
+                gap: 10px;
+                width: 100%;
+
+                h2 {
+                    font-size: 1.5rem;
+
+                }
+            }
+        }
+
+    }
+
+}
+
+@include responsive("phone") {
+    .join-home {
+        height: fit-content;
+
+
+        .final-step {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+    }
+
+    .form-sections {
+        border-radius: none;
+        border-radius: none;
+        flex-direction: column-reverse;
+        padding: 0;
+        width: 100%;
+
+        .change-join-type {
+            padding: 0;
+            border-radius: 0;
+            padding: 30px 20px;
+            gap: 10px;
+            width: 100%;
+
+            h2 {
+                font-size: 1.5rem;
+
+            }
+        }
+    }
+
+}
+
+
+
+
+
+//     .join-home {
+//         width: 100%;
+//         display: grid;
+//         place-items: center;
+//         height: 100vh;
+//         background-image: url("https://images.pexels.com/photos/1391293/pexels-photo-1391293.jpeg?auto=compress&cs=tinysrgb&w=600");
+//         background-size: cover;
+//         background-repeat: no-repeat;
+//         background-position: center;
+
+//     * {
+//         color: $base-color;
+//     }
+
+//     .form-sections {
+//         border-radius: $radius-base;
+//         backdrop-filter: brightness(0.15) blur(3px);
+//         display: flex;
+//         width: 80%;
+
+//         .change-join-type {
+//             background-color: $primary;
+//             padding: 5rem 1rem;
+//             flex: 1;
+//             display: flex;
+//             flex-direction: column;
+//             align-items: center;
+//             justify-content: center;
+//             gap: 3rem;
+//             border-radius: inherit;
+//             .change-join-button {
+//                 background-color: $dark-color;
+//             }
+//             h2 {
+//                 font-size: 2.2rem;
+//                 text-align: center;
+//             }
+//             p {
+//                 font-size: 1.2rem;
+//                 text-align: center;
+//                 text-wrap: pretty;
+//             }
+//         }
+//     }
+// }

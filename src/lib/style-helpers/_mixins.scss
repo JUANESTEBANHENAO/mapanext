@@ -1,0 +1,51 @@
+@mixin interactive() {
+  cursor: pointer;
+  transition: transform .1s ease;
+  &:hover {
+    transform: scale(1.07);
+  }
+  &:active, &:focus {
+    outline: none;
+  }
+  &:disabled {
+    opacity: 0.8;
+  }
+
+  @content;
+}
+
+@mixin theme ($dark: false) {
+  @if($dark) {
+    @content
+  }
+}
+
+@mixin center () {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @content;
+}
+
+
+//mixin to responsive design
+@mixin responsive($breakpoint) {
+  @if $breakpoint == "phone" {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == "tablet" {
+    @media (min-width: 600px) and (max-width: 1200px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == "desktop" {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+  @else {
+    @error "Invalid breakpoint: #{$breakpoint}.";
+  }
+}

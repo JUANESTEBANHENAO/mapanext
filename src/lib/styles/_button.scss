@@ -1,0 +1,17 @@
+@import "../style-helpers/colors";
+@import "../style-helpers/mixins";
+@import "../style-helpers/measurement";
+
+
+.button {
+  @include interactive;
+  @include center;
+  background-color: $primary;
+  border-radius: $radius-base;
+  width: 100px;
+  height: 40px;
+  color: white;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+}
